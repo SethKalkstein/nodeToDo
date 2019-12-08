@@ -1,5 +1,5 @@
 const express = require("express");
-const app = express;
+const app = express();
 const toDoController = require("./controllers/toDoController");
 
 //set up template engine to ejs 
