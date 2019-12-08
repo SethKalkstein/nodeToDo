@@ -9,6 +9,10 @@ app.set("view engine", "ejs");
 //static file route
 app.use(express.static("./public"));
 
+//fire controller, pass app function to controller as a variable
+
+toDoController(app);
+
 //set up port
 
 app.listen(3000);
