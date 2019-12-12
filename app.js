@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
+const connectString = require("./dbConnectString");
 const toDoController = require("./controllers/toDoController");
+
+console.log(connectString);
 
 //set up template engine to ejs 
 
