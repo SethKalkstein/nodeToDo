@@ -1,3 +1,6 @@
+const bodyParser = require("body-parser")
+const mongoose = require("mongoose");
+
 module.exports = (app) => {
     
     app.get("/todo", (req, res)=>{
