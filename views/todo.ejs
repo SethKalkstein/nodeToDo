@@ -7,7 +7,7 @@
 			  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
               crossorigin="anonymous">
     </script>
-    
+    <script src="/assets/todo-list.js"></script>
     <link rel="stylesheet" href="/assets/styles.css"/>
 
     <title>To Do List</title>
@@ -15,15 +15,15 @@
 <body>
     <div id="todo-table">
         <h1>To Do List</h1>
-        <form action="">
+        <form>
            <input type="text" name="item" placeholder="Add New Item...">
            <button type="submit">Add Item</button> 
         </form>
 
         <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
+            <% for(let i = 0; i < chores.length; i++){ %>
+                <li><%= chores[i].item %></li>
+            <% } %>
         </ul>
 
     </div>
