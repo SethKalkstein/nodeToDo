@@ -1,7 +1,7 @@
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose");
 
-const data = [{item: "get cat food"}, {item: "go to gym" }, {item: "make pickles"}, {item: "get sleep"}];
+let data = [{item: "get cat food"}, {item: "go to gym" }, {item: "make pickles"}, {item: "get sleep"}];
 
 const urlencodedParser = bodyParser.urlencoded({extended: false});
 
@@ -16,8 +16,9 @@ module.exports = (app) => {
         res.json(data);
     });
 
-    app.delete("/todo", (req, res) =>{
-
+    app.delete("/todo/:item", (req, res) =>{
+        data = data.filter( theChore => theChore.item.replace(/ /g, "-") !== req.params.item);
+        res.json(data);
     });
 
 }
